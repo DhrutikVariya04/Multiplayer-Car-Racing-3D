@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviourPun
 {
@@ -20,7 +21,6 @@ public class PlayerMovement : MonoBehaviourPun
 
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         Movement();
         Rotation();
     }
@@ -39,6 +39,9 @@ public class PlayerMovement : MonoBehaviourPun
         }
 
         Controller.Move(Movement * Time.deltaTime);
+
+        // Send updated position to other clients
+        //photonView.RPC("UpdatePosition", RpcTarget.All, transform.position);
     }
 
     private void Rotation()
@@ -53,4 +56,9 @@ public class PlayerMovement : MonoBehaviourPun
 
     }
 
+    [PunRPC]
+    public void UpdatePosition(Vector3 Position)
+    {
+        transform.position = Position;
+    }
 }
