@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviourPun
     CharacterController Controller;
     Vector3 MyRotation;
 
+    public bool isLocal = false;
+
     void Awake()
     {
         Controller = GetComponent<CharacterController>();
@@ -21,8 +23,10 @@ public class PlayerMovement : MonoBehaviourPun
 
     void Update()
     {
-        Movement();
-        Rotation();
+        if (isLocal)
+        {
+            Movement();
+        }
     }
 
 
@@ -39,26 +43,5 @@ public class PlayerMovement : MonoBehaviourPun
         }
 
         Controller.Move(Movement * Time.deltaTime);
-
-        // Send updated position to other clients
-        //photonView.RPC("UpdatePosition", RpcTarget.All, transform.position);
-    }
-
-    private void Rotation()
-    {
-        var MouseX = Input.GetAxis("Mouse X");
-        var MouseY = Input.GetAxis("Mouse Y");
-
-        MyRotation.x += MouseX;
-        MyRotation.y += MouseY;
-
-        transform.eulerAngles = new Vector2(-MyRotation.y, MyRotation.x);
-
-    }
-
-    [PunRPC]
-    public void UpdatePosition(Vector3 Position)
-    {
-        transform.position = Position;
     }
 }
