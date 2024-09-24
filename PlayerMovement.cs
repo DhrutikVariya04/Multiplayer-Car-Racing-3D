@@ -5,6 +5,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Photon.Realtime;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviourPun
 {
@@ -26,9 +28,9 @@ public class PlayerMovement : MonoBehaviourPun
         if (isLocal)
         {
             Movement();
+            GetComponentInChildren<TMP_Text>().text = PhotonNetwork.NickName;
         }
     }
-
 
     private void Movement()
     {

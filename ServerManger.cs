@@ -38,6 +38,7 @@ public class ServerManger : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        SceneManager.LoadScene("Playing");
+        //SceneManager.LoadScene("Playing");
+        PhotonNetwork.LoadLevel("Playing");
     }
 }
