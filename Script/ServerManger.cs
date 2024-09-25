@@ -2,6 +2,7 @@ using TMPro;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Realtime;
 
 public class ServerManger : MonoBehaviourPunCallbacks
 {
@@ -24,6 +25,7 @@ public class ServerManger : MonoBehaviourPunCallbacks
     public void btnusername()
     {
         PhotonNetwork.NickName = Name.text;
+        print($"Nickname --> {PhotonNetwork.NickName}");
     }
 
     public void btn_Create()
@@ -38,7 +40,11 @@ public class ServerManger : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        //SceneManager.LoadScene("Playing");
         PhotonNetwork.LoadLevel("Playing");
+    }
+
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        print("Photon Disconnected....");
     }
 }
