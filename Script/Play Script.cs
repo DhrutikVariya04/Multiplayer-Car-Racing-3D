@@ -15,7 +15,7 @@ public class PlayScript : MonoBehaviourPunCallbacks
         Player = PhotonNetwork.Instantiate("Man", new Vector3(0, 1, 0), Quaternion.identity, 0);
         Player.GetComponent<PlayerMovement>().isLocal = true;
         Gun = Player.GetComponentInChildren<Transform>();
-        Player.GetComponentInChildren<MeshRenderer>().material.color = Color.green;
+        Player.GetComponentInChildren<MeshRenderer>().material.color = Color.green; 
     }
 
     private void Update()
