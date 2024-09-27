@@ -45,6 +45,6 @@ public class ServerManger : MonoBehaviourPunCallbacks
 
     public override void OnDisconnected(DisconnectCause cause)
     {
-        print("Photon Disconnected....");
+        print("Photon Disconnected...." + cause);
     }
 }

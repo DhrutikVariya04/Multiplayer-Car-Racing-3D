@@ -1,12 +1,12 @@
+using TMPro;
 using System;
 using Photon.Pun;
-using UnityEditor;
 using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using Photon.Realtime;
-using TMPro;
 
 public class PlayerMovement : MonoBehaviourPun
 {
@@ -27,9 +27,11 @@ public class PlayerMovement : MonoBehaviourPun
     {
         if (isLocal)
         {
+            transform.tag = "Man";
             Movement();
-            GetComponentInChildren<TMP_Text>().text = PhotonNetwork.NickName;
         }
+
+        GetComponentInChildren<TMP_Text>().text = PhotonNetwork.NickName;
     }
 
     private void Movement()

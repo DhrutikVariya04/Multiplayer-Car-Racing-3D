@@ -15,12 +15,11 @@ public class PlayScript : MonoBehaviourPunCallbacks
         Player = PhotonNetwork.Instantiate("Man", new Vector3(0, 1, 0), Quaternion.identity, 0);
         Player.GetComponent<PlayerMovement>().isLocal = true;
         Gun = Player.GetComponentInChildren<Transform>();
-        Player.GetComponentInChildren<MeshRenderer>().material.color = Color.green; 
     }
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             Ammo();
         }
@@ -38,6 +37,6 @@ public class PlayScript : MonoBehaviourPunCallbacks
         ammo.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
         ammo.GetComponent<Rigidbody>().AddForce(Gun.forward * 30, ForceMode.Impulse);
 
-        Destroy(ammo, 3f);
+        //PhotonNetwork.Destroy(ammo, 3f);
     }
 }
