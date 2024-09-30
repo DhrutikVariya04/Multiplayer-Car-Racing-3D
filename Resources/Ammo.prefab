@@ -15,10 +15,9 @@ GameObject:
   - component: {fileID: -6410145572092211691}
   - component: {fileID: 2283616411294695238}
   - component: {fileID: 3569659666307588973}
-  - component: {fileID: 1576557316805920208}
   m_Layer: 0
   m_Name: Ammo
-  m_TagString: Untagged
+  m_TagString: ammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,18 +264,6 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &1576557316805920208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3871177928065981103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a40822bbfbc914243a2004da1e11a67b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4602352047965196235
 GameObject:
   m_ObjectHideFlags: 0

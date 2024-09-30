@@ -1,18 +1,18 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using Unity.VisualScripting;
+using System.Collections.Generic;
 
 public class PlayerHelth : MonoBehaviourPun
 {
-    [PunRPC]
-    public void applyDamge(int ViewID, float damage)
-    {
-        var target = PhotonView.Find(ViewID);
+    float damage = 1f;
 
-        if (target != null)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("ammo"))
         {
-            print("ViewID ===>" + ViewID /*+ "\n Color ===>" + color*/);
+            print("Hello " + other.tag);
         }
     }
 }

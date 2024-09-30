@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 5733783656134030711}
   - component: {fileID: 4860908452784145719}
   - component: {fileID: 1244196317012667943}
-  - component: {fileID: 4192060304035268589}
   - component: {fileID: 6940429194904781615}
+  - component: {fileID: 4192060304035268589}
   - component: {fileID: 9004769662094596240}
-  - component: {fileID: 845448389740399927}
-  - component: {fileID: -1008783996464264322}
+  - component: {fileID: -8013582949005661037}
+  - component: {fileID: 2924551587932070815}
   m_Layer: 0
   m_Name: Man
   m_TagString: Enemy
@@ -108,7 +108,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -116,21 +116,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4192060304035268589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41973051010699575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94ccf26f025a7e49bad5ccaa9f3d5bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  Rotationspeed: 10
-  isLocal: 0
 --- !u!143 &6940429194904781615
 CharacterController:
   m_ObjectHideFlags: 0
@@ -157,6 +142,21 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4192060304035268589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41973051010699575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94ccf26f025a7e49bad5ccaa9f3d5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  Rotationspeed: 10
+  isLocal: 0
 --- !u!114 &9004769662094596240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,11 +176,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 845448389740399927}
+  - {fileID: -8013582949005661037}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &845448389740399927
+--- !u!114 &-8013582949005661037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &-1008783996464264322
+--- !u!114 &2924551587932070815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 41973051010699575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5159ab9b6dd02f4aad1df86679c456b, type: 3}
+  m_Script: {fileID: 11500000, guid: a40822bbfbc914243a2004da1e11a67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &298414091557142085

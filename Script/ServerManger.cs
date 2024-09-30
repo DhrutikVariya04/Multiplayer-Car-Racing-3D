@@ -1,8 +1,8 @@
 using TMPro;
 using Photon.Pun;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class ServerManger : MonoBehaviourPunCallbacks
 {

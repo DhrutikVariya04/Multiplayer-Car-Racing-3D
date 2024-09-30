@@ -36,7 +36,5 @@ public class PlayScript : MonoBehaviourPunCallbacks
         Vector3 rotation = ammo.transform.rotation.eulerAngles;
         ammo.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
         ammo.GetComponent<Rigidbody>().AddForce(Gun.forward * 30, ForceMode.Impulse);
-
-        //PhotonNetwork.Destroy(ammo, 3f);
     }
 }
