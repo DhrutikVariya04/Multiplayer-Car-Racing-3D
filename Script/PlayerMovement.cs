@@ -29,9 +29,18 @@ public class PlayerMovement : MonoBehaviourPun
         {
             transform.tag = "Man";
             Movement();
+        GetComponentInChildren<TMP_Text>().text = PhotonNetwork.NickName;
+        }
+        else
+        {
+            GetComponentInChildren<TMP_Text>().text = "";
         }
 
-        GetComponentInChildren<TMP_Text>().text = PhotonNetwork.NickName;
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            Ammo();
+        }
+
     }
 
     private void Movement()
@@ -47,5 +56,18 @@ public class PlayerMovement : MonoBehaviourPun
         }
 
         Controller.Move(Movement * Time.deltaTime);
+    }
+
+    void Ammo()
+    {
+        GameObject ammo = PhotonNetwork.Instantiate("Ammo", transform.GetChild(0).position, Quaternion.identity);
+        ammo.transform.SetParent(transform.GetChild(0));
+        /*
+                Physics.IgnoreCollision(ammo.GetComponent<Collider>(), Player.transform.GetChild(4).GetComponent<Collider>());
+                ammo.transform.position = Gun.position;
+
+                Vector3 rotation = ammo.transform.rotation.eulerAngles;
+                ammo.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+                ammo.GetComponent<Rigidbody>().AddForce(Gun.forward * 30, ForceMode.Impulse);*/
     }
 }

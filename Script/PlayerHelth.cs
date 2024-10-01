@@ -4,7 +4,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using System.Collections.Generic;
 
-public class PlayerHelth : MonoBehaviourPun
+public class PlayerHelth : MonoBehaviour
 {
     float damage = 1f;
 
@@ -13,6 +13,7 @@ public class PlayerHelth : MonoBehaviourPun
         if (other.CompareTag("ammo"))
         {
             print("Hello " + other.tag);
+            print(gameObject.transform.parent.name);
         }
     }
 }
