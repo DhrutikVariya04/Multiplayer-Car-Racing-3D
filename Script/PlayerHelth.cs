@@ -6,14 +6,18 @@ using System.Collections.Generic;
 
 public class PlayerHelth : MonoBehaviour
 {
-    float damage = 1f;
+    float TotalHelth = 10f;
+    float damage = 5f;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("ammo"))
         {
-            print("Hello " + other.tag);
-            print(gameObject.transform.parent.name);
+            TotalHelth -= damage;
+            if (TotalHelth == 0)
+            {
+                Destroy(gameObject.transform.parent.gameObject);
+            }
         }
     }
 }

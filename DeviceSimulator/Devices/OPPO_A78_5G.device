@@ -1,0 +1,15 @@
+{
+    "friendlyName": "Oppo A78 5G",
+    "version": 1,
+    "screens": [
+        {
+            "width": 720,
+            "height": 1612,
+            "dpi": 270.0
+        }
+    ],
+    "systemInfo": {
+        "operatingSystem": "Android",
+        "deviceModel": "OPPO A78 5G"
+    }
+}
