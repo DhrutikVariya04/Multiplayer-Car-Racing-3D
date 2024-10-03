@@ -27,10 +27,10 @@ public class PlayerMovement : MonoBehaviourPun
     {
         if (isLocal)
         {
+            GetComponentInChildren<TMP_Text>().text = PhotonNetwork.NickName;
+            GetComponentInChildren<CameraFollow>()._isLocal = true;
             transform.tag = "Man";
             Movement();
-
-            GetComponentInChildren<TMP_Text>().text = PhotonNetwork.NickName;
 
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
             {
@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviourPun
         else
         {
             GetComponentInChildren<TMP_Text>().text = "";
+            //GetComponentInChildren<CameraFollow>()._isLocal = false;
         }
 
     }
