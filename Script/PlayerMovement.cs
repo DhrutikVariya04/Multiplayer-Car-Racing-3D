@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviourPun
     [SerializeField]
     float speed, Rotationspeed;
 
+    [SerializeField]
+    Camera camera;
+
     CharacterController Controller;
     Vector3 MyRotation;
 
@@ -23,24 +26,30 @@ public class PlayerMovement : MonoBehaviourPun
         Controller = GetComponent<CharacterController>();
     }
 
-    void Update()
+    private void Start()
     {
         if (isLocal)
         {
             GetComponentInChildren<TMP_Text>().text = PhotonNetwork.NickName;
-            GetComponentInChildren<CameraFollow>()._isLocal = true;
+            camera.gameObject.SetActive(true);
             transform.tag = "Man";
-            Movement();
-
-            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
-            {
-                Ammo();
-            }
         }
         else
         {
             GetComponentInChildren<TMP_Text>().text = "";
-            //GetComponentInChildren<CameraFollow>()._isLocal = false;
+        }
+
+    }
+    void Update()
+    {
+        if (isLocal)
+        {
+            Movement();
+
+            if (Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                Ammo();
+            }
         }
 
     }

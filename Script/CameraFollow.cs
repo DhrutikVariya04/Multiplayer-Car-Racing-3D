@@ -7,16 +7,13 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public bool _isLocal;
     float RotateSpeed = 5f;
     Vector3 MyRotation;
 
     void Update()
     {
-        if(_isLocal)
-        {
-            CameraRotation();
-        }
+        //print(PhotonNetwork.GetPing());
+        CameraRotation();
     }
 
     void CameraRotation()
@@ -33,7 +30,7 @@ public class CameraFollow : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(MyRotation.y, MyRotation.x, 0);
         transform.position = transform.parent.position + rotation * direction;
 
-        transform.parent.rotation = Quaternion.Euler(0f,MyRotation.x + 180,0f);
+        transform.parent.rotation = Quaternion.Euler(0f, MyRotation.x + 180, 0f);
         transform.LookAt(transform.parent);
     }
 }
